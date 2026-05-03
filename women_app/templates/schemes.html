@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Schemes | AI Sakhi{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold text-primary">
+            <i class="fa-solid fa-hand-holding-heart me-2"></i> Government Schemes
+        </h2>
+
+        <div class="d-flex gap-2">
+            <input type="text" id="searchInput" class="form-control" placeholder="🔍 Search Schemes or Keywords..." style="width: 280px;">
+            <select id="categoryFilter" class="form-select">
+                <option value="">All Categories</option>
+                <option value="education">Education</option>
+                <option value="health">Health</option>
+                <option value="finance">Finance</option>
+                <option value="employment">Employment</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="schemeContainer" class="row g-4">
+        {% for scheme in schemes %}
+        <div class="col-md-6 col-lg-4 scheme-card" data-name="{{ scheme.name|lower }}" data-category="{{ scheme.category }}">
+            <div class="card shadow-sm border-0 h-100 scheme-card-body">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title fw-semibold text-primary">{{ scheme.name }}</h5>
+                    <p class="card-text text-muted small mb-2"><i class="fa-solid fa-tag me-1"></i> Category: {{ scheme.category|title }}</p>
+                    <p class="card-text mb-3">{{ scheme.description|truncatechars:150 }}</p>
+                    <div class="mt-auto">
+                        <p class="text-success small mb-2">
+                            <i class="fa-solid fa-circle-check me-1"></i> Eligibility: {{ scheme.eligibility }}
+                        </p>
+                        <a href="{{ scheme.url }}" target="_blank" class="btn btn-sm btn-primary w-100">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-center text-muted">No schemes found.</p>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    // 🔍 Search Filter
+    const searchInput = document.getElementById('searchInput');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const schemeCards = document.querySelectorAll('.scheme-card');
+
+    function filterSchemes() {
+        const searchText = searchInput.value.toLowerCase();
+        const category = categoryFilter.value;
+
+        schemeCards.forEach(card => {
+            const name = card.getAttribute('data-name');
+            const cat = card.getAttribute('data-category');
+            if ((name.includes(searchText) || searchText === "") &&
+                (category === "" || cat === category)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    }
+
+    searchInput.addEventListener('input', filterSchemes);
+    categoryFilter.addEventListener('change', filterSchemes);
+</script>
+
+<style>
+    .scheme-card-body {
+        border-radius: 15px;
+        transition: all 0.3s ease;
+        background: var(--bs-light);
+    }
+
+    .scheme-card-body:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    body.dark-mode .scheme-card-body {
+        background: #2c2c2c;
+        color: #fff;
+    }
+</style>
+{% endblock %}

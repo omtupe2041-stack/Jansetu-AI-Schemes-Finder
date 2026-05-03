@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Welcome | AI Sakhi{% endblock %}
+
+{% block content %}
+<!-- 🌸 Hero Section -->
+<section class="hero-section d-flex align-items-center justify-content-between flex-wrap py-5">
+  <div class="text-content col-lg-6 px-3" data-aos="fade-right">
+    <h1 class="display-4 fw-bold text-gradient mb-3">AI Sakhi 🤖💫</h1>
+    <p class="lead text-muted mb-4">
+      Empowering women through <span class="fw-semibold text-primary">AI-guided access</span> to government schemes, support, and growth opportunities.
+    </p>
+    <div class="d-flex gap-3">
+      <a href="{% url 'chat' %}" class="btn btn-glow btn-lg">💬 Chat with AI Sakhi</a>
+      <a href="{% url 'schemes' %}" class="btn btn-outline-secondary btn-lg">📜 Explore Schemes</a>
+    </div>
+  </div>
+
+  <div class="image-content col-lg-5 text-center mt-4 mt-lg-0" data-aos="fade-left">
+    <img src="{% static 'img/women.png' %}" alt="Women Empowerment" class="img-fluid floating-img" style="max-height:400px;">
+  </div>
+</section>
+
+<!-- 🌼 Features Section -->
+<section class="features-section py-5 bg-light text-center">
+  <div class="container">
+    <h2 class="fw-bold mb-4 text-gradient">Why Choose AI Sakhi?</h2>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="zoom-in">
+        <div class="feature-card p-4 shadow-sm bg-white rounded-4">
+          <i class="fa-solid fa-robot fa-2x mb-3 text-primary"></i>
+          <h5>AI-Powered Guidance</h5>
+          <p class="text-muted small">Get intelligent recommendations on schemes based on your needs and eligibility.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="feature-card p-4 shadow-sm bg-white rounded-4">
+          <i class="fa-solid fa-language fa-2x mb-3 text-success"></i>
+          <h5>Bilingual Interface</h5>
+          <p class="text-muted small">Available in English and Marathi — designed for everyone to understand easily.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
+        <div class="feature-card p-4 shadow-sm bg-white rounded-4">
+          <i class="fa-solid fa-hand-holding-heart fa-2x mb-3 text-danger"></i>
+          <h5>Empowerment First</h5>
+          <p class="text-muted small">Bridging the gap between women and digital governance through innovation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+
+  // Floating image animation
+  const img = document.querySelector('.floating-img');
+  if (img) {
+    setInterval(() => {
+      img.style.transform = 'translateY(-10px)';
+      setTimeout(() => { img.style.transform = 'translateY(0)'; }, 500);
+    }, 2000);
+  }
+</script>
+
+<style>
+  .text-gradient {
+    background: linear-gradient(90deg, #ff66b2, #6c63ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .btn-glow {
+    background: linear-gradient(90deg, #ff66b2, #6c63ff);
+    border: none;
+    color: white;
+    box-shadow: 0 0 15px rgba(108, 99, 255, 0.4);
+    transition: all 0.3s ease;
+  }
+  .btn-glow:hover {
+    box-shadow: 0 0 25px rgba(255, 102, 178, 0.6);
+    transform: translateY(-2px);
+  }
+
+  .floating-img {
+    transition: all 0.5s ease;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15));
+  }
+
+  .feature-card {
+    transition: all 0.3s ease;
+  }
+  .feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  }
+</style>
+{% endblock %}

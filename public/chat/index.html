@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Sakhi | Chat</title>
+  <meta name="description" content="Chat with AI Sakhi to get quick scheme guidance.">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">A</span>
+        <span>AI Sakhi</span>
+      </a>
+      <nav class="nav">
+        <a data-nav href="/">Home</a>
+        <a data-nav href="/chat/">Chat</a>
+        <a data-nav href="/schemes/">Schemes</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell page">
+    <div class="layout">
+      <aside class="card info-panel">
+        <span class="badge">Assistant</span>
+        <h2 class="section-title" style="margin-top:14px;">Ask in plain language.</h2>
+        <p class="muted">
+          Try a greeting, mention a category like education or finance, or share your age and income to get a quick match.
+        </p>
+        <div class="actions">
+          <button class="btn btn-secondary" onclick="prefill('Hello')">Say Hi</button>
+          <button class="btn btn-secondary" onclick="prefill('I want schemes for education')">Education</button>
+          <button class="btn btn-secondary" onclick="prefill('I am 25, female, income 150000')">Eligibility</button>
+        </div>
+        <div class="section" style="padding-bottom:0;">
+          <h3 style="font-family:'Inter',sans-serif; margin:0 0 10px;">Tips</h3>
+          <p class="muted">Use the official scheme page links from the schemes screen if you want to apply.</p>
+        </div>
+      </aside>
+
+      <section class="card chat-panel">
+        <span class="badge">Live chat</span>
+        <h2 class="section-title" style="margin-top:14px;">AI Sakhi</h2>
+        <div class="chat-log" data-chat-log aria-live="polite"></div>
+        <div class="composer">
+          <textarea data-chat-input placeholder="Type a message..."></textarea>
+          <button class="btn btn-primary" data-send>Send</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer shell">
+    AI Sakhi | <span data-year></span>
+  </footer>
+
+  <script src="/assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Sakhi</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="/">AI Sakhi</a>
+      <div class="ms-auto">
+        <a href="{% url 'chat' %}" class="btn btn-sm btn-primary me-2">AI Chat</a>
+        <a href="{% url 'schemes' %}" class="btn btn-sm btn-outline-secondary">Schemes</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-5">
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <footer class="text-center text-muted py-3 small">
+    © 2025 AI Sakhi | Empowering Women with AI
+  </footer>
+</body>
+</html>

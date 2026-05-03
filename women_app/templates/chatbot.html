@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Chat | AI Sakhi{% endblock %}
+
+{% block content %}
+<div class="row chat-shell">
+  <!-- left: explanation / quick actions -->
+  <div class="col-lg-6 col-md-12">
+    <div class="p-4 feature-card">
+      <h4 class="fw-bold text-gradient">AI Sakhi — Personal Assistant</h4>
+      <p class="small-muted">Ask about government schemes, eligibility, or request help in Marathi / English.</p>
+
+      <div class="mt-3">
+        <h6 class="mb-2">Quick prompts</h6>
+        <div class="d-flex gap-2 flex-wrap">
+          <button class="btn btn-outline-secondary btn-sm" onclick="prefill('Hello')">Say Hi</button>
+          <button class="btn btn-outline-secondary btn-sm" onclick="prefill('I want schemes for education')">Education schemes</button>
+          <button class="btn btn-outline-secondary btn-sm" onclick="prefill('I am 25, female, income 150000')">Check eligibility</button>
+        </div>
+      </div>
+
+      <hr>
+
+      <div>
+        <h6>Tips</h6>
+        <ul class="small-muted">
+          <li>Type your age and income to get personalized matches.</li>
+          <li>Use Marathi or English — AI Sakhi understands both.</li>
+          <li>All conversations are stored for quality (admin can view). </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- right: chat panel -->
+  <div class="col-lg-6 col-md-12">
+    <div class="chat-panel">
+      <div class="chat-header">
+        <div>
+          <strong>AI Sakhi</strong>
+          <div class="small-muted">Smart scheme assistant</div>
+        </div>
+        <div class="small-muted">βeta</div>
+      </div>
+
+      <div id="chatBox" class="chat-body" aria-live="polite"></div>
+
+      <div class="chat-input">
+        <textarea id="userInput" placeholder="Type message... (press Enter to send)" aria-label="Message input"></textarea>
+        <button id="sendBtn" class="btn btn-glow send-btn">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/chatbot.js' %}"></script>
+{% endblock %}

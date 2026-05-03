@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Ladki Bahin Yojana",
+    "category": "finance",
+    "description": "Financial assistance for women between 21-60 years under state welfare programs.",
+    "eligibility": "Women aged 21-60 with income below 2L",
+    "min_age": 21,
+    "max_age": 60,
+    "income_limit": 200000,
+    "gender": "female",
+    "url": "https://mahila.maharashtra.gov.in"
+  },
+  {
+    "name": "Beti Bachao Beti Padhao",
+    "category": "education",
+    "description": "Scheme promoting education and welfare for girl children.",
+    "eligibility": "Parents of girl children below 18 years.",
+    "min_age": 0,
+    "max_age": 18,
+    "income_limit": 800000,
+    "gender": "female",
+    "url": "https://wcd.nic.in"
+  },
+  {
+    "name": "Mahila Samriddhi Yojana",
+    "category": "finance",
+    "description": "Low-interest loan program to empower rural women through self-employment.",
+    "eligibility": "Rural women with small business interest.",
+    "min_age": 18,
+    "max_age": 60,
+    "income_limit": 400000,
+    "gender": "female",
+    "url": "https://nsfdc.nic.in"
+  },
+  {
+    "name": "Skill India for Women",
+    "category": "employment",
+    "description": "Skill development and certification opportunities for women seeking jobs or self-employment.",
+    "eligibility": "Women and girls looking for vocational training.",
+    "min_age": 16,
+    "max_age": 60,
+    "income_limit": 9999999,
+    "gender": "any",
+    "url": "https://www.skillindia.gov.in"
+  },
+  {
+    "name": "Janani Suraksha Yojana",
+    "category": "health",
+    "description": "Maternal health support for pregnant women and safe delivery assistance.",
+    "eligibility": "Pregnant women meeting public health criteria.",
+    "min_age": 18,
+    "max_age": 45,
+    "income_limit": 9999999,
+    "gender": "female",
+    "url": "https://nhm.gov.in"
+  }
+]
+

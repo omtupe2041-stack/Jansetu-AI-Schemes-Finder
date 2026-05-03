@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Sakhi | Schemes</title>
+  <meta name="description" content="Browse women-focused government schemes.">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">A</span>
+        <span>AI Sakhi</span>
+      </a>
+      <nav class="nav">
+        <a data-nav href="/">Home</a>
+        <a data-nav href="/chat/">Chat</a>
+        <a data-nav href="/schemes/">Schemes</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell page">
+    <h2 class="section-title">Government Schemes</h2>
+    <p class="section-lead">Search by name or keyword, or filter by category to narrow the list.</p>
+
+    <div class="filter-bar">
+      <input data-search type="search" placeholder="Search schemes or keywords">
+      <select data-category>
+        <option value="">All categories</option>
+        <option value="education">Education</option>
+        <option value="health">Health</option>
+        <option value="finance">Financial Help</option>
+        <option value="employment">Employment</option>
+        <option value="empowerment">Women Empowerment</option>
+      </select>
+    </div>
+
+    <section class="scheme-grid" data-scheme-grid></section>
+  </main>
+
+  <footer class="footer shell">
+    AI Sakhi | <span data-year></span>
+  </footer>
+
+  <script src="/assets/site.js"></script>
+</body>
+</html>
